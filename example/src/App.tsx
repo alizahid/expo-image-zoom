@@ -41,7 +41,7 @@ function App() {
     <SafeAreaView style={styles.container}>
       <ImageZoom
         ref={imageZoomRef}
-        uri={imageUri}
+        source={imageUri}
         minScale={0.5}
         maxScale={5}
         doubleTapScale={3}
@@ -71,7 +71,7 @@ function App() {
         onResetAnimationEnd={(finished) => {
           onAnimationEnd(finished);
         }}
-        resizeMode="cover"
+        contentFit="cover"
       />
       {isVisible && (
         <View style={styles.buttonContainer}>

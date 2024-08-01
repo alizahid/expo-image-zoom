@@ -78,12 +78,12 @@ First, import the `ImageZoom` component from the `@likashefqet/react-native-imag
 import { ImageZoom } from '@likashefqet/react-native-image-zoom';
 ```
 
-To use the `ImageZoom` component, simply pass the uri prop with the URL of the image you want to zoom:
+To use the `ImageZoom` component, simply pass the source prop with the URL of the image you want to zoom:
 
 ### Basic Example
 
 ```javascript
-<ImageZoom uri={imageUri} />
+<ImageZoom source={imageUri} />
 ```
 
 ### Customized Example
@@ -91,7 +91,7 @@ To use the `ImageZoom` component, simply pass the uri prop with the URL of the i
 ```javascript
 <ImageZoom
   ref={imageZoomRef}
-  uri={imageUri}
+  source={imageUri}
   minScale={0.5}
   maxScale={5}
   doubleTapScale={3}
@@ -131,33 +131,33 @@ To use the `ImageZoom` component, simply pass the uri prop with the URL of the i
 
 All `React Native Image Props` &
 
-| Property           | Type     | Default             | Description                                                                                     |
-| ------------------ | -------- | ------------------- | ----------------------------------------------------------------------------------------------- |
-| uri                | String   | `''` (empty string) | The image's URI, which can be overridden by the `source` prop.                                  |
-| minScale           | Number   | `1`                 | The minimum scale allowed for zooming.                                                          |
-| maxScale           | Number   | `5`                 | The maximum scale allowed for zooming.                                                          |
-| doubleTapScale     | Number   | `3`                 | The value of the image scale when a double-tap gesture is detected.                             |
-| minPanPointers     | Number   | `2`                 | The minimum number of pointers required to enable panning.                                      |
-| maxPanPointers     | Number   | `2`                 | The maximum number of pointers required to enable panning.                                      |
-| isPanEnabled       | Boolean  | `true`              | Determines whether panning is enabled within the range of the minimum and maximum pan pointers. |
-| isPinchEnabled     | Boolean  | `true`              | Determines whether pinching is enabled.                                                         |
-| isSingleTapEnabled | Boolean  | `false`             | Enables or disables the single tap feature.                                                     |
-| isDoubleTapEnabled | Boolean  | `false`             | Enables or disables the double tap feature. When enabled, this feature prevents automatic reset of the image zoom to its initial position, allowing continuous zooming. To return to the initial position, double tap again or zoom out to a scale level less than 1.  |
-| onInteractionStart | Function | `undefined`         | A callback triggered when the image interaction starts.                                         |
-| onInteractionEnd   | Function | `undefined`         | A callback triggered when the image interaction ends.                                           |
-| onPinchStart       | Function | `undefined`         | A callback triggered when the image pinching starts.                                            |
-| onPinchEnd         | Function | `undefined`         | A callback triggered when the image pinching ends.                                              |
-| onPanStart         | Function | `undefined`         | A callback triggered when the image panning starts.                                             |
-| onPanEnd           | Function | `undefined`         | A callback triggered when the image panning ends.                                               |
-| onSingleTap        | Function | `undefined`         | A callback triggered when a single tap is detected.                                             |
-| onDoubleTap        | Function | `undefined`         | A callback triggered when a double tap gesture is detected.                                     |
-| onResetAnimationEnd| Function | `undefined`         | A callback triggered upon the completion of the reset animation. It accepts two parameters: `finished` and `values`. The `finished` parameter evaluates to true if all animation values have successfully completed the reset animation; otherwise, it is false, indicating interruption by another gesture or unforeseen circumstances. The `values` parameter provides additional detailed information for each animation value.  |
+| Property            | Type     | Default     | Description                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| source              | String   | `undefined` | The image's URI, which can be overridden by the `source` prop.                                                                                                                                                                                                                                                                                                                                                                     |
+| minScale            | Number   | `1`         | The minimum scale allowed for zooming.                                                                                                                                                                                                                                                                                                                                                                                             |
+| maxScale            | Number   | `5`         | The maximum scale allowed for zooming.                                                                                                                                                                                                                                                                                                                                                                                             |
+| doubleTapScale      | Number   | `3`         | The value of the image scale when a double-tap gesture is detected.                                                                                                                                                                                                                                                                                                                                                                |
+| minPanPointers      | Number   | `2`         | The minimum number of pointers required to enable panning.                                                                                                                                                                                                                                                                                                                                                                         |
+| maxPanPointers      | Number   | `2`         | The maximum number of pointers required to enable panning.                                                                                                                                                                                                                                                                                                                                                                         |
+| isPanEnabled        | Boolean  | `true`      | Determines whether panning is enabled within the range of the minimum and maximum pan pointers.                                                                                                                                                                                                                                                                                                                                    |
+| isPinchEnabled      | Boolean  | `true`      | Determines whether pinching is enabled.                                                                                                                                                                                                                                                                                                                                                                                            |
+| isSingleTapEnabled  | Boolean  | `false`     | Enables or disables the single tap feature.                                                                                                                                                                                                                                                                                                                                                                                        |
+| isDoubleTapEnabled  | Boolean  | `false`     | Enables or disables the double tap feature. When enabled, this feature prevents automatic reset of the image zoom to its initial position, allowing continuous zooming. To return to the initial position, double tap again or zoom out to a scale level less than 1.                                                                                                                                                              |
+| onInteractionStart  | Function | `undefined` | A callback triggered when the image interaction starts.                                                                                                                                                                                                                                                                                                                                                                            |
+| onInteractionEnd    | Function | `undefined` | A callback triggered when the image interaction ends.                                                                                                                                                                                                                                                                                                                                                                              |
+| onPinchStart        | Function | `undefined` | A callback triggered when the image pinching starts.                                                                                                                                                                                                                                                                                                                                                                               |
+| onPinchEnd          | Function | `undefined` | A callback triggered when the image pinching ends.                                                                                                                                                                                                                                                                                                                                                                                 |
+| onPanStart          | Function | `undefined` | A callback triggered when the image panning starts.                                                                                                                                                                                                                                                                                                                                                                                |
+| onPanEnd            | Function | `undefined` | A callback triggered when the image panning ends.                                                                                                                                                                                                                                                                                                                                                                                  |
+| onSingleTap         | Function | `undefined` | A callback triggered when a single tap is detected.                                                                                                                                                                                                                                                                                                                                                                                |
+| onDoubleTap         | Function | `undefined` | A callback triggered when a double tap gesture is detected.                                                                                                                                                                                                                                                                                                                                                                        |
+| onResetAnimationEnd | Function | `undefined` | A callback triggered upon the completion of the reset animation. It accepts two parameters: `finished` and `values`. The `finished` parameter evaluates to true if all animation values have successfully completed the reset animation; otherwise, it is false, indicating interruption by another gesture or unforeseen circumstances. The `values` parameter provides additional detailed information for each animation value. |
 
 ### ImageZoom Ref
 
-| Property           | Type     | Description                                                                                     |
-| ------------------ | -------- | ----------------------------------------------------------------------------------------------- |
-| reset              | Function | Resets the image zoom, restoring it to its initial position and scale level.                    |
+| Property | Type     | Description                                                                  |
+| -------- | -------- | ---------------------------------------------------------------------------- |
+| reset    | Function | Resets the image zoom, restoring it to its initial position and scale level. |
 
 ## Changelog
 

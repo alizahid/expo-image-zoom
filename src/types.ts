@@ -1,8 +1,4 @@
-import type {
-  ImageProps,
-  ImageSourcePropType,
-  LayoutRectangle,
-} from 'react-native';
+import type { LayoutRectangle } from 'react-native';
 import type {
   GestureStateChangeEvent,
   PanGestureHandlerEventPayload,
@@ -10,6 +6,7 @@ import type {
   TapGestureHandlerEventPayload,
 } from 'react-native-gesture-handler';
 import { AnimatableValue } from 'react-native-reanimated';
+import { ImageProps } from 'expo-image';
 
 export type OnPinchStartCallback = (
   event: GestureStateChangeEvent<PinchGestureHandlerEventPayload>
@@ -59,12 +56,7 @@ export type OnResetAnimationEndCallback = (
   >
 ) => void;
 
-export type ImageZoomProps = Omit<ImageProps, 'source'> & {
-  /**
-   * The image's URI, which can be overridden by the `source` prop.
-   * @default ''
-   */
-  uri?: string;
+export type ImageZoomProps = ImageProps & {
   /**
    * The minimum scale allowed for zooming.
    * @default 1
@@ -151,11 +143,6 @@ export type ImageZoomProps = Omit<ImageProps, 'source'> & {
    * The values parameter provides additional detailed information for each animation value.
    */
   onResetAnimationEnd?: OnResetAnimationEndCallback;
-  /**
-   * @see https://facebook.github.io/react-native/docs/image.html#source
-   * @default undefined
-   */
-  source?: ImageSourcePropType;
 };
 
 export type ImageZoomUseLayoutProps = Pick<ImageZoomProps, 'onLayout'>;
