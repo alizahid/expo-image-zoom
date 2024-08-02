@@ -20,7 +20,10 @@ export const useImageLayout = ({ onLayout }: ImageZoomUseLayoutProps) => {
       y: y + height / 2,
     };
 
-    onLayout?.(event);
+    if (typeof onLayout === 'function') {
+      onLayout(event);
+    }
+
     setState({ ...layout, center });
   };
 

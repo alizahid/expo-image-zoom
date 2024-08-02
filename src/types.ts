@@ -5,7 +5,7 @@ import type {
   PinchGestureHandlerEventPayload,
   TapGestureHandlerEventPayload,
 } from 'react-native-gesture-handler';
-import { AnimatableValue } from 'react-native-reanimated';
+import { AnimatableValue, AnimateProps } from 'react-native-reanimated';
 import { ImageProps } from 'expo-image';
 
 export type OnPinchStartCallback = (
@@ -56,7 +56,7 @@ export type OnResetAnimationEndCallback = (
   >
 ) => void;
 
-export type ImageZoomProps = ImageProps & {
+export type ImageZoomProps = AnimateProps<ImageProps> & {
   /**
    * The minimum scale allowed for zooming.
    * @default 1
