@@ -1,6 +1,6 @@
 {
   "name": "expo-image-zoom",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "A performant zoomable image written in Reanimated v2+ 🚀",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
